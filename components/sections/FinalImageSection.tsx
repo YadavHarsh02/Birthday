@@ -16,8 +16,8 @@ export function FinalImageSection() {
         className="relative z-10 w-full max-w-4xl aspect-[4/3] md:aspect-[16/9] rounded-[32px] overflow-hidden shadow-2xl border-4 border-white/20"
       >
         <Image
-          src="/placeholder.jpg" // Replace this with your actual image file!
-          alt="Final Memory"
+          src="/final-collage.png"
+          alt="Final Memory Collage"
           fill
           className="object-cover"
           priority
