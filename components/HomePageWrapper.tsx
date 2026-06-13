@@ -6,9 +6,9 @@ import { LockScreen } from './LockScreen';
 export function HomePageWrapper({ children }: { children: React.ReactNode }) {
   const [isMounted, setIsMounted] = useState(false);
   
-  // Set target date to a past date for development so the lock screen is bypassed!
-  // You can change this to `new Date(2026, 5, 18, 0, 0, 0)` when you are ready to launch.
-  const [targetDate] = useState(() => new Date("2020-01-01T00:00:00"));
+  // Set to a fixed time: 5 minutes from when this was committed for Vercel testing
+  // Equivalent to 2026-06-14 00:52:00 IST
+  const [targetDate] = useState(() => new Date("2026-06-13T19:22:00Z"));
 
   const [isUnlocked, setIsUnlocked] = useState(false);
 
