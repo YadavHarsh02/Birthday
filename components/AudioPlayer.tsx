@@ -5,8 +5,8 @@ export function AudioPlayer() {
   const [isPlaying, setIsPlaying] = useState(false)
   const audioRef = useRef<HTMLAudioElement>(null)
 
-  // A very soft, beautiful public domain piano track for ambiance
-  const audioUrl = "https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf07a.mp3?filename=soft-romantic-piano-113009.mp3"
+  // Make sure you place a file named 'about-you.mp3' in the public/ folder!
+  const audioUrl = "/about-you.mp3"
 
   const togglePlay = () => {
     if (audioRef.current) {
