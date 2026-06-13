@@ -7,7 +7,7 @@ import { PasswordScreen } from './PasswordScreen';
 export function HomePageWrapper({ children }: { children: React.ReactNode }) {
   const [isMounted, setIsMounted] = useState(false);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
-  
+
   // Set to a fixed time: 5 minutes from when this was committed for Vercel testing
   // Equivalent to 2026-06-14 00:52:00 IST
   const [targetDate] = useState(() => new Date("2026-06-13T19:22:00Z"));
@@ -26,7 +26,7 @@ export function HomePageWrapper({ children }: { children: React.ReactNode }) {
       setIsUnlocked(now >= targetDate);
     };
     checkDate();
-    
+
     const interval = setInterval(checkDate, 1000);
     return () => clearInterval(interval);
   }, []);
@@ -41,7 +41,7 @@ export function HomePageWrapper({ children }: { children: React.ReactNode }) {
   // 1. Password Lock is the absolute first barrier
   if (!isAuthenticated) {
     // You can change "cottoncandy" to whatever password you want!
-    return <PasswordScreen onUnlock={handleUnlock} correctPassword="cottoncandy" />;
+    return <PasswordScreen onUnlock={handleUnlock} correctPassword="029618" />;
   }
 
   // 2. Countdown Timer is the second barrier
