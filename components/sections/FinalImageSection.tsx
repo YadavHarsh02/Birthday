@@ -22,15 +22,6 @@ export function FinalImageSection() {
           className="object-cover"
           priority
         />
-        
-        {/* Subtle overlay gradient to make text readable if you want to add any later */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-        
-        <div className="absolute bottom-8 left-0 w-full text-center">
-          <p className="text-white font-cursive text-3xl md:text-5xl drop-shadow-lg tracking-wide">
-            To Infinity & Beyond ✨
-          </p>
-        </div>
       </motion.div>
     </section>
   );

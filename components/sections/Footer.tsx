@@ -5,24 +5,26 @@ import { FiHeart } from 'react-icons/fi'
 
 export function Footer() {
   return (
-    <footer className="bg-foreground text-background py-12 px-6">
-      <div className="max-w-4xl mx-auto text-center">
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.8 }}
-        >
-          <p className="flex items-center justify-center gap-2 text-lg font-semibold mb-2">
-            Made with <FiHeart className="text-secondary" size={20} /> for a special day
-          </p>
-          <p className="text-background/70 mb-4">
-            This birthday microsite was created to celebrate you and all the joy you bring to the world.
-          </p>
-          <p className="text-sm text-background/60">
-            © 2024 A Birthday Celebration. All moments are priceless.
-          </p>
-        </motion.div>
-      </div>
+    <footer className="w-full bg-transparent text-white py-16 px-6 flex flex-col items-center justify-center relative z-20">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        className="max-w-4xl mx-auto text-center flex flex-col items-center gap-6"
+      >
+        <p className="font-cursive text-5xl md:text-7xl drop-shadow-[0_0_15px_rgba(255,255,255,0.5)] tracking-wide mb-8">
+          To Infinity & Beyond ✨
+        </p>
+        
+        <div className="w-24 h-px bg-white/30 mb-4"></div>
+        
+        <p className="flex items-center justify-center gap-2 text-sm md:text-base font-medium tracking-widest uppercase text-white/70">
+          Developed with <span className="text-red-500 animate-pulse text-xl">❤️</span> by Harsh
+        </p>
+        <p className="text-xs text-white/40 font-mono mt-2">
+          © {new Date().getFullYear()} The Multiverse Project.
+        </p>
+      </motion.div>
     </footer>
   )
 }
