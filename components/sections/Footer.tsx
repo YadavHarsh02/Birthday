@@ -15,14 +15,14 @@ export function Footer() {
         <p className="font-cursive text-5xl md:text-7xl drop-shadow-[0_0_15px_rgba(255,255,255,0.5)] tracking-wide mb-8">
           To the moon and beyond ✨
         </p>
-        
+
         <div className="w-24 h-px bg-white/30 mb-4"></div>
-        
+
         <p className="flex items-center justify-center gap-2 text-sm md:text-base font-medium tracking-widest uppercase text-white/70">
           Developed with <span className="text-red-500 animate-pulse text-xl">❤️</span> by Harsh
         </p>
         <p className="text-xs text-white/40 font-mono mt-2">
-          © {new Date().getFullYear()} The Multiverse Project.
+          © {new Date().getFullYear()} The Birthday Project.
         </p>
       </motion.div>
     </footer>
