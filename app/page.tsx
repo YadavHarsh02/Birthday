@@ -5,6 +5,7 @@ import { MemoryFrames } from '@/components/sections/MemoryFrames'
 import { LetterSection } from '@/components/sections/LetterSection'
 import { GameSection } from '@/components/sections/GameSection'
 import { CakeStudio } from '@/components/sections/CakeStudio'
+import { FinalImageSection } from '@/components/sections/FinalImageSection'
 import { HomePageWrapper } from '@/components/HomePageWrapper'
 import { ScrollBackground } from '@/components/ScrollBackground'
 import { AudioPlayer } from '@/components/AudioPlayer'
@@ -28,6 +29,7 @@ export default function Page() {
           <DepthSection><LetterSection /></DepthSection>
           <DepthSection><GameSection /></DepthSection>
           <DepthSection><CakeStudio /></DepthSection>
+          <DepthSection><FinalImageSection /></DepthSection>
         </main>
       </SmoothScroll>
     </HomePageWrapper>
