@@ -16,11 +16,6 @@ export function HomePageWrapper({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     setIsMounted(true);
-    // Check local storage so they don't have to re-enter password on refresh
-    if (localStorage.getItem('birthday_auth') === 'true') {
-      setIsAuthenticated(true);
-    }
-
     const checkDate = () => {
       const now = new Date();
       setIsUnlocked(now >= targetDate);
@@ -35,7 +30,6 @@ export function HomePageWrapper({ children }: { children: React.ReactNode }) {
 
   const handleUnlock = () => {
     setIsAuthenticated(true);
-    localStorage.setItem('birthday_auth', 'true');
   };
 
   // 1. Password Lock is the absolute first barrier
