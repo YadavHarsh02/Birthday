@@ -13,7 +13,7 @@ export function Footer() {
         className="max-w-4xl mx-auto text-center flex flex-col items-center gap-6"
       >
         <p className="font-cursive text-5xl md:text-7xl drop-shadow-[0_0_15px_rgba(255,255,255,0.5)] tracking-wide mb-8">
-          To Infinity & Beyond ✨
+          To the moon and beyond ✨
         </p>
         
         <div className="w-24 h-px bg-white/30 mb-4"></div>
