@@ -1,6 +1,7 @@
 "use client"
 import React from 'react'
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 
 // Shared background petals component
 const BackgroundPetals = () => (
@@ -33,7 +34,7 @@ const BackgroundPetals = () => (
   </div>
 );
 
-const PolaroidFrame = ({ rotation, delay, x = 0, y = 0, flowerTop, className = "" }: any) => {
+const PolaroidFrame = ({ rotation, delay, x = 0, y = 0, flowerTop, className = "", imageSrc }: any) => {
   return (
     <motion.div
       initial={{ opacity: 0, scale: 0.8, y: 50 }}
@@ -50,8 +51,12 @@ const PolaroidFrame = ({ rotation, delay, x = 0, y = 0, flowerTop, className = "
       </div>
 
       {/* Inner photo placeholder */}
-      <div className="w-[200px] h-[200px] sm:w-[250px] sm:h-[250px] md:w-[300px] md:h-[300px] bg-[#f8f9fa] border border-gray-200 shadow-[inset_0_2px_5px_rgba(0,0,0,0.05)] flex items-center justify-center">
-        <span className="text-gray-300 text-sm font-medium tracking-widest uppercase">Photo Placeholder</span>
+      <div className="relative w-[200px] h-[200px] sm:w-[250px] sm:h-[250px] md:w-[300px] md:h-[300px] bg-[#f8f9fa] border border-gray-200 shadow-[inset_0_2px_5px_rgba(0,0,0,0.05)] flex items-center justify-center overflow-hidden">
+        {imageSrc ? (
+          <Image src={imageSrc} alt="Memory" fill className="object-cover" />
+        ) : (
+          <span className="text-gray-300 text-sm font-medium tracking-widest uppercase">Photo Placeholder</span>
+        )}
       </div>
 
       {/* Signature / Text space */}
@@ -78,8 +83,8 @@ const Page1 = () => (
     </motion.div>
 
     <div className="z-10 flex flex-col md:flex-row gap-16 md:gap-24 items-center justify-center relative w-full max-w-5xl px-4">
-      <PolaroidFrame rotation={-4} delay={0.2} x={-20} flowerTop={true} />
-      <PolaroidFrame rotation={6} delay={0.4} x={20} y={40} flowerTop={false} className="border-4 border-pink-100" />
+      <PolaroidFrame rotation={-4} delay={0.2} x={-20} flowerTop={true} imageSrc="/gallery/photo1.jpg" />
+      <PolaroidFrame rotation={6} delay={0.4} x={20} y={40} flowerTop={false} className="border-4 border-pink-100" imageSrc="/gallery/photo2.jpg" />
     </div>
   </div>
 )
@@ -106,7 +111,7 @@ const Page2 = () => {
 
           {/* Camera Screen (Photo Placeholder) */}
           <div className="w-[50%] h-[85%] bg-[#f8f9fa] border-[8px] border-[#333] rounded-xl ml-2 relative overflow-hidden flex items-center justify-center shadow-[inset_0_5px_15px_rgba(0,0,0,0.3)]">
-            <span className="text-gray-400 text-xs sm:text-sm font-medium tracking-widest uppercase">Screen Placeholder</span>
+            <Image src="/gallery/photo3.jpg" alt="Memory" fill className="object-cover" />
 
             {/* Small stars decorations on screen border */}
             <div className="absolute bottom-2 left-2 text-sm text-pink-300">⭐</div>
@@ -164,11 +169,11 @@ const Page3 = () => {
 
       <div className="z-10 relative w-full max-w-7xl px-4 flex flex-col md:flex-row items-center justify-center gap-12 md:gap-8">
 
-        <PolaroidFrame rotation={-12} delay={0.2} y={-50} flowerTop={true} className="z-10 hidden md:block scale-90" />
+        <PolaroidFrame rotation={-12} delay={0.2} y={-50} flowerTop={true} className="z-10 hidden md:block scale-90" imageSrc="/gallery/photo4.jpg" />
 
-        <PolaroidFrame rotation={5} delay={0.4} y={20} flowerTop={false} className="z-20 border-4 border-[#f1f5f9]" />
+        <PolaroidFrame rotation={5} delay={0.4} y={20} flowerTop={false} className="z-20 border-4 border-[#f1f5f9]" imageSrc="/gallery/photo5.jpg" />
 
-        <PolaroidFrame rotation={18} delay={0.6} y={-30} flowerTop={true} className="z-30 scale-95" />
+        <PolaroidFrame rotation={18} delay={0.6} y={-30} flowerTop={true} className="z-30 scale-95" imageSrc="/gallery/photo6.jpg" />
 
         {/* Masking Tape Accents */}
         <motion.div
