@@ -84,8 +84,8 @@ export function LetterSection() {
             className="absolute left-[5%] right-[5%] bottom-2 bg-[#fefdfc] rounded-md shadow-inner flex items-center justify-center border border-pink-50 p-6 md:p-8"
             initial={{ height: "90%", y: 0, zIndex: 10, scale: 1 }}
             animate={isOpen ? {
-              y: "-45%", // Peeks out gracefully instead of flying away
-              height: "100%", // Stays a reasonable size
+              y: "-70%", // Flies out higher
+              height: "180%", // Becomes much taller like a real paper
               zIndex: 40,
               scale: 1.05, // Slight pop out effect
               boxShadow: "0 20px 40px rgba(0,0,0,0.15)"
@@ -101,19 +101,33 @@ export function LetterSection() {
           >
             {/* Letter Content */}
             <motion.div
-              className="w-full h-full border-2 border-dashed border-pink-100 rounded-sm p-4 flex flex-col items-center justify-center text-center overflow-hidden bg-[url('/noise.png')] bg-repeat"
+              className="w-full h-full border-2 border-dashed border-pink-100 rounded-sm p-3 md:p-5 flex flex-col items-center overflow-hidden bg-[url('/noise.png')] bg-repeat"
             >
               <motion.div
                 initial={{ opacity: 0, y: 10 }}
                 animate={isOpen ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
                 transition={{ delay: 1.2, duration: 0.8 }}
-                className="w-full h-full flex flex-col"
+                className="w-full h-full flex flex-col overflow-y-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
               >
-                <h3 className="text-xl md:text-2xl text-pink-500 font-cursive mb-2 mt-2">My Dearest...</h3>
-                <p className="text-gray-500 text-xs md:text-sm italic flex-1 flex items-center justify-center font-cursive leading-relaxed px-2">
-                  [ Your heartfelt letter goes here. ]
-                </p>
-                <span className="text-4xl mt-4">❤️</span>
+                <h3 className="text-xl md:text-2xl text-pink-500 font-cursive mb-6 mt-4 text-left px-2">Dear Aliya,</h3>
+                <div className="text-gray-600 text-xs md:text-sm font-serif leading-relaxed px-2 md:px-4 space-y-4 pb-8 text-left flex-1">
+                  <p>I still wonder about you sometimes.</p>
+                  <p>Are you doing okay? Have you finally become the woman you always wanted to be? The kind who wakes up without carrying yesterday on her shoulders? The kind who smiles because she’s happy, not because she’s trying to convince herself that she is?</p>
+                  <p>I hope so.</p>
+                  <p>I know we don’t belong to each other anymore. I know life keeps moving, and people keep growing in directions they never expected. But every now and then, I catch myself thinking about the girl I once knew so well.</p>
+                  <p>The girl who could be stubborn and soft at the same time. The girl who carried more in her heart than she ever let anyone see. The girl whose laugh could make a bad day feel a little less heavy.</p>
+                  <p>And I wonder if you’re still arguing with yourself sometimes. If your mind still keeps you awake. If you’re still trying to figure everything out while pretending you already have.</p>
+                  <p>I hope you’ve been kinder to yourself than you were back then.</p>
+                  <p>There are things I wish had happened differently. Things I wish I had said, and things I wish I had understood sooner. But if there’s one thing I never regretted, it was loving you.</p>
+                  <p>Even now, after everything, I don’t think of you with anger. I think of you like a season that ended before I was ready for it to. Beautiful, difficult, unforgettable.</p>
+                  <p>Maybe that’s what some people become.</p>
+                  <p>Not strangers. Not lovers. Just a part of your heart that time never quite manages to erase.</p>
+                  <p>I hope you’re sleeping well. I hope you’re smiling more. I hope life is being gentle with you.</p>
+                  <p>And if it isn’t, I hope you’ve learned how strong you’ve always been.</p>
+                  <p className="pt-4 font-semibold">I still wish the best for you takli.</p>
+                  <p className="font-semibold">I always will.</p>
+                  <div className="text-center pt-6 text-4xl">❤️</div>
+                </div>
               </motion.div>
             </motion.div>
           </motion.div>
